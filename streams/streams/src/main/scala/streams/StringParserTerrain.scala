@@ -56,7 +56,8 @@ trait StringParserTerrain extends GameDef {
     def inBounds[C](x: Int, y: Int, v: Vector[Vector[C]]): Boolean = (x >= 0 && x < v.length && y >= 0 && y < v.apply(x).length) 
     
     def isValid(p: Pos): Boolean = {
-    	inBounds(p.x, p.y, levelVector) && levelVector.apply(p.x).apply(p.y) == 'o'
+    	def char = levelVector.apply(p.x).apply(p.y)
+    	inBounds(p.x, p.y, levelVector) && (char == 'o' || char == 'T' || char == 'S')
     }
     isValid
   }

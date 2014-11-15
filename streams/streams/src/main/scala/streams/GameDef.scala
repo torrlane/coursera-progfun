@@ -140,7 +140,7 @@ trait GameDef {
      * Returns the list of positions reachable from the current block
      * which are inside the terrain.
      */
-    def legalNeighbors: List[(Block, Move)] = neighbors.filter( (t: (Block, Move)) => t._1 isLegal)
+    def legalNeighbors: List[(Block, Move)] = neighbors.filter( t => t._1.isLegal)
 
     /**
      * Returns `true` if the block is standing.
@@ -150,7 +150,10 @@ trait GameDef {
     /**
      * Returns `true` if the block is entirely inside the terrain.
      */
-    def isLegal: Boolean = terrain(b1) && terrain(b2)
+    def isLegal: Boolean = {
+    		val legal = terrain(b1) && terrain(b2)
+            legal
+    }
 
   }
 }
