@@ -2,6 +2,7 @@ package recfun
 
 import org.scalatest.FunSuite
 
+
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 
@@ -10,9 +11,6 @@ class CountChangeSuite extends FunSuite {
   import Main.countChange
   test("countChange: example given in instructions") {
     assert(countChange(4,List(1,2)) === 3)
-  }
-  test("countChange: Rugby!") {
-    assert(countChange(100,List(3,5,7)) === 55)
   }
 
   test("countChange: sorted CHF") {
@@ -26,4 +24,5 @@ class CountChangeSuite extends FunSuite {
   test("countChange: unsorted CHF") {
     assert(countChange(300,List(500,5,50,100,20,200,10)) === 1022)
   }
+
 }
